@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employees</title>
+</head>
+<body>
+    <h1>Employee Master</h1>
+    <div>
+        <label for="code">Employee Code:  </label>
+        <input type="number" name="code" id="code"><br>
+        <label for="name">Employee Name: </label>
+        <input type="text" name="name" id="name"><br>
+        <label for="salary">Employee Salary:</label>
+        <input type="number" name="salary" id="salary"><br>
+        <button onclick="addEmployee()">Add Employee</button>
+        <button onclick="displayEmployee()">Display Employee</button>
+    </div>
+    <div>
+        <table id="empData"></table>
+    </div>
+    <script>
+        employee=[];
+
+        function employees(code,name,salary){
+         this.code=code;
+         this.name=name;
+         this.salary=salary;
+        }
+        function addEmployee(){
+        code=document.getElementById("code").value;
+        name=document.getElementById("name").value;
+        salary=document.getElementById("salary").value;
+        
+
+         emp = new employees(code,name,salary);
+
+         employee.push(emp);
+        }
+        
+        function displayEmployee(){
+            data='<tr><th>CODE</th><th>NAME</th><th>SALARY</th></tr>';
+        
+        for(employ of employee ){
+            data+=`<tr><td>${employ.code}</td><td>${employ.name}</td><td>${employ.salary}</td></tr>`;
+        }
+        document.getElementById("empData").innerHTML=data;
+        }
+
+    </script>
+</body>
+</html>

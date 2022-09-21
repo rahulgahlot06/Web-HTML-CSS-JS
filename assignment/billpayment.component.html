@@ -1,0 +1,9 @@
+<h1 id="top">GENERATE ELECTRICITY BILL</h1>
+<div id="one">
+    <label for="units">Enter the Units : </label>
+    <input type="number" name="units" id="units"  [(ngModel)]="total_units"><br>
+</div>
+<div id="two">
+    <button (click)="calculateBill()">Generate Bill</button>
+</div>
+<h1 id="Bill">Total Bill is : {{total_bill}} - Rupees</h1>

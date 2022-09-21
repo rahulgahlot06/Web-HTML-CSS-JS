@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX</title>
+</head>
+<body>
+    <h1>The XMLHttpRequest Object</h1>
+<button type="button" onclick="loadDoc()">Get Todos</button>
+<div >
+    <table id="display">
+
+    </table>
+</div>
+<script>
+function loadDoc(){
+const xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange=function(){
+    if(this.readyState==4 && this.status==200){
+        console.log("response")
+        displayData(JSON.parse(this.responseText))
+    
+    }
+};
+xmlhttp.open("GET","https://jsonplaceholder.typicode.com/todos");
+xmlhttp.send();
+}
+function displayData(todos){
+    
+    data = "<tr><th>User Id</th><th>Id</th><th>Title</th><th>Completed</th></tr>";
+
+    for (i=0;i<todos.length;i++){
+        todo = todos[i]
+      //  console.log("todo ",todo)
+      data +=`<tr><td>${todo.userId}</td><td>${todo.id}</td><td>${todo.title}</td><td>${todo.completed}</td></tr>`;
+       // console.log(`User Id : ${todo.userId} id :${todo.id} title :${todo.title} completed :${todo.completed}`)
+    }
+    document.getElementById("display").innerHTML=data;
+
+}
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Queries</title>
+    <style>
+        body{
+            background-image: url(image/india.png);
+            image-rendering: optimizeQuality;
+        }
+
+        @media screen and (max-width:500px) {
+            body{
+                background-image: url(image/usa.png);
+                image-orientation: inherit;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    
+<h1>Resize the browser window to see the effect!</h1>
+<p>The media query will only apply if the media type is screen and the viewport is 480px wide or wider.</p>
+</body>
+</html>

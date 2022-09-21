@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array with Objects</title>
+</head>
+<body>
+    <h1>Array with Objects</h1>
+    <script>
+
+        employees=[];
+    emp1={
+        code:1,
+        name:"Rahul",
+        salary:30000
+    }
+    
+    emp2={
+        code:2,
+        name:"Deepak",
+        salary:40000
+    }
+    employees.push(emp1);
+    employees.push(emp2);
+    
+    for(emp of employees){
+    console.log(`Employee code: ${emp.code} name: ${emp.name} salary: ${emp.salary}`);
+    }
+    
+
+
+    </script>
+</body>
+</html>

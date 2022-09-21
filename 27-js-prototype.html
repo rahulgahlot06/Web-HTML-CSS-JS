@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype</title>
+</head>
+<body>
+    <h1>Using Prototype</h1>
+<script>
+    function employees(code,name,salary){
+        this.code=code;
+        this.name=name;
+        this.salary=salary;
+    }
+
+    employees.prototype.nationaltiy='';
+    employees.prototype.fun=function(){
+        return this.code+" "+this.name+" "+this.salary
+    }
+    emp=new employees(1,'rahul',40000);
+    emp.nationaltiy='Indian';
+    console.log(emp.nationaltiy);
+    console.log(emp.fun());
+
+
+</script>
+</body>
+</html>
